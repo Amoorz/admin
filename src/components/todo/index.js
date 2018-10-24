@@ -7,17 +7,6 @@ class Todo extends Component {
             arr: [1]
         }
     }
-    // componentWillMount () {
-    //     console.log('todo componentWillMount--> 1')
-    // }
-    componentDidMount () {
-        // setTimeout(() => {
-        //     this.setState({
-        //         arr: [1, 1, 3]
-        //     })
-        // }, 2000)
-        // console.log('todo componentDidMount--> 3')
-    }
     static getDerivedStateFromProps (nextProps, prevState) {
         console.log('todo getDerivedStateFromProps--->', nextProps, prevState)
         if (nextProps.data) {
@@ -27,15 +16,26 @@ class Todo extends Component {
         }
         return null
     }
+    // componentWillMount () {
+    //     console.log('todo componentWillMount--> 1')
+    // }
+    componentDidMount () {
+        // setTimeout(() => {
+        //     this.setState({
+        //         arr: [1, 1, 3]
+        //     })
+        // }, 2000)
+        console.log('todo componentDidMount--> 3')
+    }
     // componentWillReceiveProps (nextProps) {
     //     console.log('todo componentWillReceiveProps---> 4')
     // }
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     console.log('todo shouldComponentUpdate---> 5', nextProps)
-    //     return true
-    // }
-    // componentWillUpdate (prevProps, prevState) {
-    //     console.log('todo componentWillUpdate---> 6', prevProps)
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('todo shouldComponentUpdate---> 5', nextProps, nextState)
+        return true
+    }
+    // componentWillUpdate (nextProps, nextState) {
+    //     console.log('todo componentWillUpdate---> 6', nextProps, nextState)
     // }
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('todo getSnapshotBeforeUpdate--->', prevProps, prevState)

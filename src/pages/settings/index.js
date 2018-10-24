@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Todo from 'components/todo'
+import { Button } from 'antd'
 
 class Settings extends Component {
     constructor (props) {
@@ -24,8 +25,8 @@ class Settings extends Component {
     //     console.log('%c Settings shouldComponentUpdate---> 5', 'color: #1890ff', nextProps)
     //     return true
     // }
-    // componentWillUpdate (prevProps, prevState) {
-    //     console.log('%c Settings componentWillUpdate---> 6', 'color: #1890ff', prevProps)
+    // componentWillUpdate (nextProps, nextState) {
+    //     console.log('%c Settings componentWillUpdate---> 6', 'color: #1890ff', nextProps, nextState)
     // }
     // componentDidUpdate (prevProps, prevState) {
     //     console.log('%c Settings componentDidUpdate---> 7', 'color: #1890ff', prevProps)
@@ -40,6 +41,7 @@ class Settings extends Component {
             <div>
                 <p>系统设置</p>
                 <Todo data={data} />
+                <Button type="danger">Danger</Button>
             </div>
         )
     }

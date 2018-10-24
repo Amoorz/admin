@@ -104,11 +104,10 @@
       "node"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "devDependencies": {
+    "antd": "^3.10.2",
+    "babel-plugin-import": "^1.10.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0"
   }
 }
