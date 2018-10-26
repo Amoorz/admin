@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Todo from 'components/todo'
+import { withRouter  } from 'react-router'
 import { Button } from 'antd'
+
+@withRouter
 
 class Settings extends Component {
     constructor (props) {
@@ -35,6 +38,7 @@ class Settings extends Component {
     //     console.log('%c Settings componentWillUnmount---> 8', 'color: #1890ff')
     // }
     render () {
+        console.log(this.props)
         // console.log('%c Settings render--->', 'color: #1890ff')
         const { data } = this.state
         return (
