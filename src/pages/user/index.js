@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import MyTable from 'components/table'
+import { setList } from 'actions/user'
+import { connect } from 'react-redux'
 
 class User extends Component {
     constructor (props) {
@@ -17,6 +19,7 @@ class User extends Component {
         this.setState({
             data: [0,1,2]
         })
+        console.log(this.props)
     }
     // componentWillReceiveProps (nextProps) {
     //     console.log('%c User componentWillReceiveProps---> 4', 'color: #1890ff')
@@ -32,7 +35,7 @@ class User extends Component {
     //     console.log('%c User componentDidUpdate---> 7', 'color: #1890ff', prevProps)
     // }
     componentWillUnmount () {
-        console.log('%c User componentWillUnmount---> 8', 'color: #1890ff')
+        // console.log('%c User componentWillUnmount---> 8', 'color: #1890ff')
     }
     handleClick = () => {
         this.setState({
@@ -50,7 +53,7 @@ class User extends Component {
             <div>
                 <p>用户中心</p>
                 <button onClick={this.handleClick}>传props</button>
-                <MyTable data={data} />
+                {/* <MyTable data={data} /> */}
                 {/* {show ? <MyTable /> : null} */}
             </div>
         )
@@ -58,3 +61,4 @@ class User extends Component {
 }
 
 export default User
+// export default connect(mapStateToProps)(User)

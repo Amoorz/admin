@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Todo from 'components/todo'
-import { withRouter  } from 'react-router'
+import { withRouter } from 'react-router'
 import { Button } from 'antd'
 
 @withRouter
