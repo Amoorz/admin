@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { setUserList } from 'actions/user'
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return {
         list: state.setList.list
     }

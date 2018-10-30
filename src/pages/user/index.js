@@ -19,7 +19,7 @@ class User extends Component {
         this.setState({
             data: [0,1,2]
         })
-        console.log(this.props)
+        // console.log(this.props)
     }
     // componentWillReceiveProps (nextProps) {
     //     console.log('%c User componentWillReceiveProps---> 4', 'color: #1890ff')

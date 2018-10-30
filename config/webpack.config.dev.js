@@ -165,7 +165,8 @@ module.exports = {
       components: path.resolve(__dirname, '../src/components'),
       service: path.resolve(__dirname, '../src/service'),
       utils: path.resolve(__dirname, '../src/utils'),
-      actions: path.resolve(__dirname, '../src/actions')
+      actions: path.resolve(__dirname, '../src/actions'),
+      routers: path.resolve(__dirname, '../src/routers')
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
