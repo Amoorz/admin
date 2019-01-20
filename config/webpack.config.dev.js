@@ -72,9 +72,9 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         loader,
         options: {
           modifyVars: {
-            'primary-color': '#000000',
-            'link-color': '#1DA57A',
-            'border-radius-base': '2px',
+            // 'primary-color': '#1DA57A',
+            // 'link-color': '#1DA57A',
+            // 'border-radius-base': '2px',
           },
           javascriptEnabled: true,
         }
@@ -104,9 +104,9 @@ module.exports = {
     // Note: instead of the default WebpackDevServer client, we use a custom one
     // to bring better experience for Create React App users. You can replace
     // the line below with these two lines if you prefer the stock client:
-    // require.resolve('webpack-dev-server/client') + '?/',
-    // require.resolve('webpack/hot/dev-server'),
-    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve('webpack-dev-server/client') + '?/',
+    require.resolve('webpack/hot/dev-server'),
+    // require.resolve('react-dev-utils/webpackHotDevClient'),
     // Finally, this is your app's code:
     paths.appIndexJs,
     // We include the app code last so that if there is a runtime error during
@@ -160,10 +160,12 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      api: path.resolve(__dirname, '../src/api'),
+      images: path.resolve(__dirname, '../src/images'),
       pages: path.resolve(__dirname, '../src/pages'),
       style: path.resolve(__dirname, '../src/style'),
       components: path.resolve(__dirname, '../src/components'),
-      service: path.resolve(__dirname, '../src/service'),
+      services: path.resolve(__dirname, '../src/services'),
       utils: path.resolve(__dirname, '../src/utils'),
       actions: path.resolve(__dirname, '../src/actions'),
       routers: path.resolve(__dirname, '../src/routers')

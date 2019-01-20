@@ -104,9 +104,9 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     }
     if (preProcessor === "less-loader") {
       loader.options.modifyVars = {
-        'primary-color': '#000000',
-        'link-color': '#1DA57A',
-        'border-radius-base': '2px',
+        // 'primary-color': '#1DA57A',
+        // 'link-color': '#1DA57A',
+        // 'border-radius-base': '2px',
       }
       loader.options.javascriptEnabled = true
     }
@@ -234,10 +234,12 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      api: path.resolve(__dirname, '../src/api'),
+      images: path.resolve(__dirname, '../src/images'),
       pages: path.resolve(__dirname, '../src/pages'),
       style: path.resolve(__dirname, '../src/style'),
       components: path.resolve(__dirname, '../src/components'),
-      service: path.resolve(__dirname, '../src/service'),
+      services: path.resolve(__dirname, '../src/services'),
       utils: path.resolve(__dirname, '../src/utils'),
       actions: path.resolve(__dirname, '../src/actions'),
       routers: path.resolve(__dirname, '../src/routers')
@@ -322,7 +324,7 @@ module.exports = {
                     },
                   },
                 ],
-                ["import",{libraryName: "antd",style: "css"}]
+                // ["import",{libraryName: "antd",style: "css"}]
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important

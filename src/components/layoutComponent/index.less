@@ -1,0 +1,67 @@
+.layoutComponent {
+    width: 100%;
+    // min-height: 100vh;
+    .trigger {
+        font-size: 18px;
+        line-height: 64px;
+        padding: 0 24px;
+        cursor: pointer;
+        transition: color .3s;
+        // &:hover {
+        //     color: #1890ff;
+        // }
+    }
+    &__header {
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        .col-user{
+            margin-right: 20px;
+            float: right;
+        }
+    }
+    .ant-breadcrumb {
+        padding: 14px 16px 0;
+    }
+    &__content {
+        padding: 14px 16px 0;
+        width: 100%;
+        .ant-breadcrumb{
+            margin-bottom: 10px;
+        }
+        &>div {
+            padding: 20px;
+            width: 100%;
+            min-height: 600px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+    }
+    .ant-menu-item a {
+        // display: inline;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.ant-drawer-body {
+    padding: 0;
+}
+.ant-drawer-content {
+    background-color: #000818;
+}
+
+.logo {
+    margin: 16px 20px 30px;
+    height: 34px;
+    // background: rgba(255,255,255,.2);
+    color: #fff;
+    overflow: hidden;
+    img {
+        width: 34px;
+    }
+    span {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 16px;
+    }
+}

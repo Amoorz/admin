@@ -1,44 +1,66 @@
-import {
-    HashRouter as Router,
-    // BrowserRouter as Router,
-    Route,
-    Switch,
-    Link
-} from 'react-router-dom'
 import React, { Component } from 'react'
-import routeConfig from './routeConfig'
-// import { Settings, User, Workplace } from './configRoute'
+import { Route,
+    // Redirect,
+    Switch, withRouter } from 'react-router-dom'
+import { constantMap, layoutTree } from './routesConfig'
 
-// import Settings from 'pages/settings/loadable'
-// import User from 'pages/user/loadable'
-// import Workplace from 'pages/workplace/loadable'
-
-class Rootroute extends Component {
-    buildRoutes () {
-        let route = []
-        for (let i = 0; i < routeConfig.length; i++) {
-            const { path, component, exact } = routeConfig[i]
-            route.push(<Route path={path} component={component} exact={exact} key={path} />)
+class RootRoute extends Component {
+    buildLayoutRoutes (Dom, fatherPath) {
+        // console.log('layoutTree------>', layoutTree)
+        return (
+            <Dom>
+                {layoutTree.map((v) => {
+                    const { path, component } = v
+                    return (<Route path={`${fatherPath}${path}`} render={() => this.isRedirect(component)} key={path} />)
+                })}
+            </Dom>
+        )
+    }
+    // 权限验证
+    isRedirect (Dom) {
+        // console.log(localStorage.getItem('token'))
+        // if (!localStorage.getItem('token')) {
+        //     return (<Redirect to="/" />)
+        // } else {
+        //     return (<Dom />)
+        // }
+        return (<Dom />)
+    }
+    buildConstantRoutes () {
+        let html = []
+        for (let i = 0; i < constantMap.length; i++) {
+            const { path, component, exact, isLayout } = constantMap[i]
+            if (isLayout) {
+                html.push(
+                    <Route path={path} render={() => this.buildLayoutRoutes(component, path)} key={path} exact={exact} />
+                )
+            } else {
+                html.push(
+                    <Route path={path} component={component} key={path} exact={exact} />
+                )
+            }
         }
-        return route
+        return html
     }
     render () {
         return (
-            <Router>
-                <div className="main">
-                    <Link className="mr10" to="/" replace>设置</Link>
-                    <Link className="mr10" to="/user" replace>用户中心</Link>
-                    <Link to="/workplace" replace>控制台</Link>
-                    <Switch>
-                        {this.buildRoutes()}
-                        {/* <Route path="/" component={Settings} exact />
-                        <Route path="/User" component={User} />
-                        <Route path="/Workplace" component={Workplace} /> */}
-                    </Switch>
-                </div>
-            </Router>
+            <Switch>
+                {this.buildConstantRoutes()}
+                {/* <Route path="/library" render={() => this.buildLayoutRoutes()} /> */}
+                {/* <Route path="/library" render={function () {
+                    return (
+                        <Switch>
+                            <Route path="/library" component={planOrProject} exact />
+                            <Route path="/library/projectCompany" component={projectCompany} />
+                            <Route path="*" component={login404} />
+                        </Switch>
+                    )}}
+                />
+                <Route path="/" component={login} exact />
+                <Route path="*" component={login404} /> */}
+            </Switch>
         )
     }
 }
 
-export default Rootroute
+export default withRouter(RootRoute)

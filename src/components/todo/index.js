@@ -7,18 +7,18 @@ class Todo extends Component {
             arr: [1]
         }
     }
-    static getDerivedStateFromProps (nextProps, prevState) {
-        console.log('todo getDerivedStateFromProps--->', nextProps, prevState)
-        if (nextProps.data) {
-            return {
-                arr: [0, 0, 0, 0]
-            }
-        }
-        return null
-    }
-    // componentWillMount () {
-    //     console.log('todo componentWillMount--> 1')
+    // static getDerivedStateFromProps (nextProps, prevState) {
+    //     console.log('todo getDerivedStateFromProps--->', nextProps, prevState)
+    //     if (nextProps.data) {
+    //         return {
+    //             arr: [0, 0, 0, 0]
+    //         }
+    //     }
+    //     return null
     // }
+    componentWillMount () {
+        console.log('todo componentWillMount--> 1')
+    }
     componentDidMount () {
         // setTimeout(() => {
         //     this.setState({
@@ -37,16 +37,16 @@ class Todo extends Component {
     // componentWillUpdate (nextProps, nextState) {
     //     console.log('todo componentWillUpdate---> 6', nextProps, nextState)
     // }
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('todo getSnapshotBeforeUpdate--->', prevProps, prevState)
-        return '你好'
-    }
+    // getSnapshotBeforeUpdate(prevProps, prevState) {
+    //     console.log('todo getSnapshotBeforeUpdate--->', prevProps, prevState)
+    //     return '你好'
+    // }
     componentDidUpdate (prevProps, prevState, snapshot) {
         console.log('todo componentDidUpdate---> 7', prevProps, prevState, snapshot)
     }
-    // componentWillUnmount () {
-    //     console.log('todo componentWillUnmount---> 8')
-    // }
+    componentWillUnmount () {
+        console.log('todo componentWillUnmount---> 8')
+    }
     render () {
         const { data } = this.props
         const { arr } = this.state

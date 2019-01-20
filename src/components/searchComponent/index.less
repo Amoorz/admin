@@ -1,0 +1,60 @@
+.SearchComponent {
+    // margin-bottom: 20px; 
+    padding-bottom: 10px;
+    min-height: 52px;
+    .ant-form-item-control, .ant-form-item-label{
+        line-height: 32px;
+        height: 32px;
+    }
+    .ant-form-item-label {
+        // padding-right: 4px;
+    }
+    .ant-form-item {
+        margin-bottom: 20px;
+        display: flex;
+    }
+    .ant-form-item-control-wrapper {
+        flex: 1;
+    }
+    .isModal {
+        .ant-form-item {
+            display: block;
+        }
+    }
+    .isMobile {
+        .ant-form-item {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .SearchComponent {
+        .ant-form-item {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .SearchComponent {
+        .ant-form-item-label {
+            width: auto;
+        }
+        .ant-form-item-control-wrapper {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: 412px) and (max-width: 1200px) {
+    .SearchComponent {
+        .ant-form-item-label label{
+            // max-width: 126px;
+            // display: inline-block;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // text-align: left;
+        }
+    }
+}
