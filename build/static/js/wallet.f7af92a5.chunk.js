@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{645:function(e,t,n){"use strict";n.r(t);var a=n(29),c=n(30),r=n(33),u=n(31),i=n(32),o=n(1),l=n.n(o),p=function(e){function t(){return Object(a.a)(this,t),Object(r.a)(this,Object(u.a)(t).apply(this,arguments))}return Object(i.a)(t,e),Object(c.a)(t,[{key:"render",value:function(){return l.a.createElement("div",null,"wallet")}}]),t}(o.Component);t.default=p}}]);
-//# sourceMappingURL=wallet.f7af92a5.chunk.js.map

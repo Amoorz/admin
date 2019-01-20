@@ -2,6 +2,21 @@ import React from 'react'
 import Loadable from 'react-Loadable'
 import layoutComponent from 'components/layoutComponent'
 
+import Login from 'pages/login'
+import page404 from 'pages/404'
+import Workplace from 'pages/workplace'
+import AccountInfo from 'pages/accountInfo'
+import Lifecycle from 'pages/lifecycle'
+import Communicate from 'pages/communicate'
+import Journal from 'pages/ledgerAccount/journal'
+import AccountDetails from 'pages/ledgerAccount/accountDetails'
+import Wallet from 'pages/ledgerAccount/wallet'
+import AccountManage from 'pages/systemManage/accountManage'
+import RoleManage from 'pages/systemManage/roleManage'
+import AuthManage from 'pages/systemManage/authManage'
+import HouseInfo from 'pages/systemManage/houseInfo'
+import LogManage from 'pages/systemManage/logManage'
+
 const LoadingComponent = ({ isLoading, error }) => {
     if (isLoading) {
         return <div>Loading...</div>
@@ -20,10 +35,11 @@ export const constantMap = [
         name: '登录',
         path: '/',
         exact: true,
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "login"*/'pages/login'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "login"*/'pages/login'),
+        //     loading: LoadingComponent
+        // })
+        component: Login
     }, {
         name: '后台',
         path: '/library',
@@ -34,10 +50,11 @@ export const constantMap = [
         name: '404',
         path: '*',
         exact: false,
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "404"*/'pages/404'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "404"*/'pages/404'),
+        //     loading: LoadingComponent
+        // })
+        component: page404
     }
 ]
 
@@ -48,37 +65,41 @@ export const layoutMap = [
         path: '/workplace',
         icon: 'gateway',
         auth: 'workplace',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "workplace"*/'pages/workplace'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "workplace"*/'pages/workplace'),
+        //     loading: LoadingComponent
+        // })
+        component: Workplace
     }, {
         name: '查询表格',
         path: '/accountInfo',
         icon: 'table',
         auth: 'accountInfo',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "accountInfo"*/'pages/accountInfo'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "accountInfo"*/'pages/accountInfo'),
+        //     loading: LoadingComponent
+        // })
+        component: AccountInfo
     }, {
         name: '生命周期',
         path: '/lifecycle',
         icon: 'calendar',
         auth: 'Lifecycle',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "lifecycle"*/'pages/lifecycle'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "lifecycle"*/'pages/lifecycle'),
+        //     loading: LoadingComponent
+        // })
+        component: Lifecycle
     }, {
         name: '组件通信',
         path: '/communicate',
         icon: 'phone',
         auth: 'communicate',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "communicate"*/'pages/communicate'),
-            loading: LoadingComponent
-        })
+        // component: Loadable({
+        //     loader: () => import(/* webpackChunkName: "communicate"*/'pages/communicate'),
+        //     loading: LoadingComponent
+        // })
+        component: Communicate
     }, {
         name: 'react router dom',
         path: '/ledgerAccount',
@@ -90,28 +111,31 @@ export const layoutMap = [
                 path: '/journal',
                 exact: false,
                 auth: 'journal',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "journal"*/'pages/ledgerAccount/journal'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "journal"*/'pages/ledgerAccount/journal'),
+                //     loading: LoadingComponent
+                // })
+                component: Journal
             }, {
                 name: '002',
                 path: '/accountDetails',
                 exact: false,
                 auth: 'accountDetails',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "accountDetails"*/'pages/ledgerAccount/accountDetails'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "accountDetails"*/'pages/ledgerAccount/accountDetails'),
+                //     loading: LoadingComponent
+                // })
+                component: AccountDetails
             }, {
                 name: '003',
                 path: '/wallet',
                 exact: false,
                 auth: 'wallet',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "wallet"*/'pages/ledgerAccount/wallet'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "wallet"*/'pages/ledgerAccount/wallet'),
+                //     loading: LoadingComponent
+                // })
+                component: Wallet
             }
         ]
     }, {
@@ -125,46 +149,51 @@ export const layoutMap = [
                 path: '/accountManage',
                 exact: false,
                 auth: 'accountManage',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "accountManage"*/'pages/systemManage/accountManage'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "accountManage"*/'pages/systemManage/accountManage'),
+                //     loading: LoadingComponent
+                // })
+                component: AccountManage
             }, {
                 name: '002',
                 path: '/roleManage',
                 exact: false,
                 auth: 'roleManage',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "roleManage"*/'pages/systemManage/roleManage'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "roleManage"*/'pages/systemManage/roleManage'),
+                //     loading: LoadingComponent
+                // })
+                component: RoleManage
             }, {
                 name: '003',
                 path: '/authManage',
                 exact: false,
                 auth: 'authManage',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "authManage"*/'pages/systemManage/authManage'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "authManage"*/'pages/systemManage/authManage'),
+                //     loading: LoadingComponent
+                // })
+                component: AuthManage
             }, {
                 name: '004',
                 path: '/houseInfo',
                 exact: false,
                 auth: 'houseInfo',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "houseInfo"*/'pages/systemManage/houseInfo'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "houseInfo"*/'pages/systemManage/houseInfo'),
+                //     loading: LoadingComponent
+                // })
+                component: HouseInfo
             }, {
                 name: '005',
                 path: '/logManage',
                 exact: false,
                 auth: 'logManage',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "logManage"*/'pages/systemManage/logManage'),
-                    loading: LoadingComponent
-                })
+                // component: Loadable({
+                //     loader: () => import(/* webpackChunkName: "logManage"*/'pages/systemManage/logManage'),
+                //     loading: LoadingComponent
+                // })
+                component: LogManage
             }
         ]
     }

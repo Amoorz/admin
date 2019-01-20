@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{646:function(n,e,t){"use strict";t.r(e);var a=t(29),c=t(30),u=t(33),r=t(31),i=t(32),o=t(1),p=t.n(o),s=function(n){function e(){return Object(a.a)(this,e),Object(u.a)(this,Object(r.a)(e).apply(this,arguments))}return Object(i.a)(e,n),Object(c.a)(e,[{key:"render",value:function(){return p.a.createElement("div",null,"accountManage")}}]),e}(o.Component);e.default=s}}]);
-//# sourceMappingURL=accountManage.222b46ed.chunk.js.map

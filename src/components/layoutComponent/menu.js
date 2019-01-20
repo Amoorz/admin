@@ -3,7 +3,8 @@ import { Menu, Icon, Layout } from 'antd'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { layoutMap, layoutTree, menuTree } from 'routers/routesConfig'
-import logoSrc from 'images/locals.png'
+// import logoSrc from 'images/locals.png'
+import logoSrc from './pic.js'
 
 const { Sider } = Layout
 const { Item, SubMenu } = Menu

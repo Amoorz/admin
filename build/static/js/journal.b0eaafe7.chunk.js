@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{643:function(n,e,t){"use strict";t.r(e);var a=t(29),c=t(30),r=t(33),u=t(31),i=t(32),o=t(1),p=t.n(o),s=function(n){function e(){return Object(a.a)(this,e),Object(r.a)(this,Object(u.a)(e).apply(this,arguments))}return Object(i.a)(e,n),Object(c.a)(e,[{key:"render",value:function(){return p.a.createElement("div",null,"journal")}}]),e}(o.Component);e.default=s}}]);
-//# sourceMappingURL=journal.b0eaafe7.chunk.js.map

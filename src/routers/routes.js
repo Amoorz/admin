@@ -11,6 +11,7 @@ class RootRoute extends Component {
             <Dom>
                 {layoutTree.map((v) => {
                     const { path, component } = v
+                    // console.log(`${fatherPath}${path}`)
                     return (<Route path={`${fatherPath}${path}`} render={() => this.isRedirect(component)} key={path} />)
                 })}
             </Dom>
