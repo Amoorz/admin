@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{648:function(e,n,t){"use strict";t.r(n);var a=t(29),c=t(30),u=t(33),o=t(31),r=t(32),i=t(1),s=t.n(i),p=function(e){function n(){return Object(a.a)(this,n),Object(u.a)(this,Object(o.a)(n).apply(this,arguments))}return Object(r.a)(n,e),Object(c.a)(n,[{key:"render",value:function(){return s.a.createElement("div",null,"houseInfo")}}]),n}(i.Component);n.default=p}}]);
+//# sourceMappingURL=houseInfo.6eebccfb.chunk.js.map
