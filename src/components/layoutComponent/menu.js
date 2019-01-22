@@ -160,7 +160,7 @@ class MenuList extends Component {
             >
                 <div className="logo">
                     <img src={logoSrc} alt="logo" />
-                    <span>React 笔记</span>
+                    <span>React 后台</span>
                 </div>
                 <Menu
                     theme="dark"

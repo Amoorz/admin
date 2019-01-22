@@ -35,7 +35,7 @@ Child.propTypes = {
 
 let upCom = () => (
 <pre>
-<cord>
+<code>
 {`
 子组件
 import React, { Component } from 'react';
@@ -94,7 +94,7 @@ export default class App extends Component {
     }
 }
 `}
-</cord>
+</code>
 </pre>
 )
 

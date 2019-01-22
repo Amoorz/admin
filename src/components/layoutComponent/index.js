@@ -1,30 +1,14 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import { Layout, Icon, Breadcrumb, Avatar, Menu, Dropdown, Drawer, Input } from 'antd'
+import { Layout, Icon, Breadcrumb, Avatar, Menu, Dropdown, Drawer, Input, Row, Col } from 'antd'
 import SiderMenu from './menu'
 import { layoutTree } from 'routers/routesConfig'
-// import { connect } from 'react-redux'
-// import { saveCurrentMenu } from 'actions/siderMenu'
 import './index.less'
 
 // const { Item, SubMenu } = Menu
 
 const { Header, Content, Footer } = Layout
 const { Search } = Input
-
-
-// const mapStateToProps = (state) => {
-//     // console.log(state)
-//     return {
-//         list: state.saveCurrentMenu.list
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         saveCurrentMenu: (data) => dispatch(saveCurrentMenu(data))
-//     }
-// }
 
 class LayoutComponent extends Component {
     constructor (props) {
@@ -76,15 +60,7 @@ class LayoutComponent extends Component {
     toggle = () => {
         const {
             collapsed,
-            // visible,
-            // isMobile
         } = this.state
-        // if (isMobile) {
-        //     this.setState({
-        //         visible: !visible
-        //       })
-        // } else {
-        // }
         this.setState({
             collapsed: !collapsed
         })
@@ -105,8 +81,25 @@ class LayoutComponent extends Component {
     }
     userMenu = () => {
         return (
-            <Menu>
-                <Menu.Item><Link to="/">退出登录</Link></Menu.Item>
+            <Menu className="userMenu" style={{width: '180px'}}>
+                <Menu.Item>
+                    <Link to="/library/account/center">
+                        <Icon type="user" />
+                        <span className="">个人中心</span>
+                    </Link>
+                </Menu.Item>
+                <Menu.Item className="mb5">
+                    <Link to="/library/account/settings">
+                        <Icon type="tool" />
+                        <span className="">个人设置</span>
+                    </Link>
+                </Menu.Item>
+                <Menu.Item className="bt">
+                    <Link to="/">
+                        <Icon type="logout" />
+                        <span className="">退出登录</span>
+                    </Link>
+                </Menu.Item>
             </Menu>
         )
     }
@@ -121,30 +114,6 @@ class LayoutComponent extends Component {
         } = this.state
         return (
             <Layout className="layoutComponent">
-                {/* {!isMobile ?
-                    <Sider
-                        // breakpoint="lg"
-                        trigger={null}
-                        collapsible
-                        // onBreakpoint={(broken) => { this.onBreakpoint(broken) }}
-                        collapsed={collapsed}
-                    >
-                        <div className="logo" />
-                        <SiderMenu shortTime={[]} />
-                    </Sider> :
-                    <Drawer
-                        title=""
-                        width={200}
-                        placement={'left'}
-                        closable={false}
-                        onClose={this.onClose}
-                        visible={collapsed}
-                    >
-                        <Sider>
-                            <SiderMenu shortTime={[]} />
-                        </Sider>
-                    </Drawer>
-                } */}
                 {!isMobile ?
                     <SiderMenu
                         breakpoint="xl"
@@ -166,22 +135,30 @@ class LayoutComponent extends Component {
                 }
                 <Layout>
                     <Header className="layoutComponent__header">
-                        <Icon
-                            className="trigger"
-                            type={collapsed ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.toggle}
-                        />
-                        <Search
-                            style={{'width': '240px'}}
-                            // placeholder="input search text"
-                            onSearch={value => console.log(value)}
-                            enterButton
-                        />
-                        <span className="col-user">
-                            <Dropdown overlay={this.userMenu()}>
-                                <Avatar icon="user" />
-                            </Dropdown>
-                        </span>
+                        <Row>
+                            <Col span={4}>
+                                <Icon
+                                    className="trigger"
+                                    type={collapsed ? 'menu-unfold' : 'menu-fold'}
+                                    onClick={this.toggle}
+                                />
+                            </Col>
+                            <Col span={16}>
+                                <Search
+                                    style={{width: '280px', marginTop: '16px'}}
+                                    placeholder="快速搜索"
+                                    onSearch={value => console.log(value)}
+                                    enterButton
+                                />
+                            </Col>
+                            <Col span={4}>
+                                <span className="col-user">
+                                    <Dropdown overlay={this.userMenu()}>
+                                        <Avatar icon="user" />
+                                    </Dropdown>
+                                </span>
+                            </Col>
+                        </Row>
                     </Header>
                     <Breadcrumb className="layoutComponent__bread">
                         {currentPath ? currentPath.split('-').map(v => <Breadcrumb.Item key={v}>{v}</Breadcrumb.Item>) : null}

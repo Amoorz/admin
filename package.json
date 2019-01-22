@@ -106,9 +106,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.1.2",
-    "antd": "^3.11.6",
+    "antd": "^3.12.4",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.10.0",
+    "echarts": "^4.2.0-rc.2",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "node-sass": "^4.9.4",

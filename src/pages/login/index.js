@@ -14,7 +14,7 @@ class Login extends Component {
                         <div className="ivu-card-head">
                             <p>
                                 <i className="iconfont icon-login mr10" />
-                                react 知识管理
+                                react 后台
                             </p>
                         </div>
                         <div className="ivu-card-body">

@@ -1,33 +1,27 @@
-import React from 'react'
-import Loadable from 'react-Loadable'
+// import React from 'react'
+// import Loadable from 'react-Loadable'
 import layoutComponent from 'components/layoutComponent'
 
 import Login from 'pages/login'
 import page404 from 'pages/404'
 import Workplace from 'pages/workplace'
-import AccountInfo from 'pages/accountInfo'
+import Form from 'pages/form'
 import Lifecycle from 'pages/lifecycle'
 import Communicate from 'pages/communicate'
-import Journal from 'pages/ledgerAccount/journal'
-import AccountDetails from 'pages/ledgerAccount/accountDetails'
-import Wallet from 'pages/ledgerAccount/wallet'
-import AccountManage from 'pages/systemManage/accountManage'
-import RoleManage from 'pages/systemManage/roleManage'
-import AuthManage from 'pages/systemManage/authManage'
-import HouseInfo from 'pages/systemManage/houseInfo'
-import LogManage from 'pages/systemManage/logManage'
+import Center from 'pages/account/center'
+import Settings from 'pages/account/settings'
 
-const LoadingComponent = ({ isLoading, error }) => {
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
-    else if (error) {
-        return <div>Sorry, there was a problem loading the page.</div>
-    }
-    else {
-        return null
-    }
-}
+// const LoadingComponent = ({ isLoading, error }) => {
+//     if (isLoading) {
+//         return <div>Loading...</div>
+//     }
+//     else if (error) {
+//         return <div>Sorry, there was a problem loading the page.</div>
+//     }
+//     else {
+//         return null
+//     }
+// }
 
 // 基础路由
 export const constantMap = [
@@ -72,14 +66,14 @@ export const layoutMap = [
         component: Workplace
     }, {
         name: '查询表格',
-        path: '/accountInfo',
+        path: '/form',
         icon: 'table',
-        auth: 'accountInfo',
+        auth: 'form',
         // component: Loadable({
         //     loader: () => import(/* webpackChunkName: "accountInfo"*/'pages/accountInfo'),
         //     loading: LoadingComponent
         // })
-        component: AccountInfo
+        component: Form
     }, {
         name: '生命周期',
         path: '/lifecycle',
@@ -101,209 +95,28 @@ export const layoutMap = [
         // })
         component: Communicate
     }, {
-        name: 'react router dom',
-        path: '/ledgerAccount',
-        icon: 'database',
-        auth: 'ledgerAccount',
+        name: '用户页',
+        path: '/account',
+        icon: 'user',
+        exact: false,
+        auth: 'account',
         children: [
             {
-                name: '001',
-                path: '/journal',
+                name: '个人中心',
+                path: '/center',
                 exact: false,
-                auth: 'journal',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "journal"*/'pages/ledgerAccount/journal'),
-                //     loading: LoadingComponent
-                // })
-                component: Journal
+                auth: 'Center',
+                component: Center
             }, {
-                name: '002',
-                path: '/accountDetails',
+                name: '个人设置',
+                path: '/settings',
                 exact: false,
-                auth: 'accountDetails',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "accountDetails"*/'pages/ledgerAccount/accountDetails'),
-                //     loading: LoadingComponent
-                // })
-                component: AccountDetails
-            }, {
-                name: '003',
-                path: '/wallet',
-                exact: false,
-                auth: 'wallet',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "wallet"*/'pages/ledgerAccount/wallet'),
-                //     loading: LoadingComponent
-                // })
-                component: Wallet
-            }
-        ]
-    }, {
-        name: 'redux',
-        path: '/systemManage',
-        icon: 'coffee',
-        auth: 'dashboard',
-        children: [
-            {
-                name: '001',
-                path: '/accountManage',
-                exact: false,
-                auth: 'accountManage',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "accountManage"*/'pages/systemManage/accountManage'),
-                //     loading: LoadingComponent
-                // })
-                component: AccountManage
-            }, {
-                name: '002',
-                path: '/roleManage',
-                exact: false,
-                auth: 'roleManage',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "roleManage"*/'pages/systemManage/roleManage'),
-                //     loading: LoadingComponent
-                // })
-                component: RoleManage
-            }, {
-                name: '003',
-                path: '/authManage',
-                exact: false,
-                auth: 'authManage',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "authManage"*/'pages/systemManage/authManage'),
-                //     loading: LoadingComponent
-                // })
-                component: AuthManage
-            }, {
-                name: '004',
-                path: '/houseInfo',
-                exact: false,
-                auth: 'houseInfo',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "houseInfo"*/'pages/systemManage/houseInfo'),
-                //     loading: LoadingComponent
-                // })
-                component: HouseInfo
-            }, {
-                name: '005',
-                path: '/logManage',
-                exact: false,
-                auth: 'logManage',
-                // component: Loadable({
-                //     loader: () => import(/* webpackChunkName: "logManage"*/'pages/systemManage/logManage'),
-                //     loading: LoadingComponent
-                // })
-                component: LogManage
+                auth: 'settings',
+                component: Settings
             }
         ]
     }
 ]
-
-// export const layoutMap = [
-//     {
-//         name: '用户管理',
-//         path: '/user',
-//         icon: 'pie-chart',
-//         auth: 'user',
-//         children: [
-//             {
-//                 name: '信息',
-//                 path: '/info',
-//                 auth: 'info',
-//                 component: Loadable({
-//                     loader: () => import(/* webpackChunkName: "info"*/'pages/test/info.js'),
-//                     loading: LoadingComponent
-//                 })
-//             }
-//         ]
-//     }, {
-//         name: '地图管理',
-//         path: '/map',
-//         icon: 'inbox',
-//         auth: 'map',
-//         component: Loadable({
-//             loader: () => import(/* webpackChunkName: "map"*/'pages/test/map.js'),
-//             loading: LoadingComponent
-//         })
-//     }, {
-//         name: '业务',
-//         path: '/business',
-//         icon: 'desktop',
-//         auth: 'business',
-//         children: [
-//             {
-//                 name: '内部',
-//                 path: '/inner',
-//                 auth: 'inner',
-//                 component: Loadable({
-//                     loader: () => import(/* webpackChunkName: "inner"*/'pages/test/inner.js'),
-//                     loading: LoadingComponent
-//                 })
-//             }, {
-//                 name: '外部',
-//                 path: '/outer',
-//                 auth: 'outer',
-//                 children: [
-//                     {
-//                         name: '交易',
-//                         path: '/deal',
-//                         auth: 'deal',
-//                         children: [
-//                             {
-//                                 name: '时间',
-//                                 path: '/time',
-//                                 auth: 'time',
-//                                 component: Loadable({
-//                                     loader: () => import(/* webpackChunkName: "time"*/'pages/test/time.js'),
-//                                     loading: LoadingComponent
-//                                 })
-//                             }, {
-//                                 name: '金额',
-//                                 path: '/sum',
-//                                 auth: 'sum',
-//                                 component: Loadable({
-//                                     loader: () => import(/* webpackChunkName: "sum"*/'pages/test/sum.js'),
-//                                     loading: LoadingComponent
-//                                 })
-//                             }
-//                         ]
-//                     }, {
-//                         name: '反馈',
-//                         path: '/feedback',
-//                         auth: 'feedback',
-//                         component: Loadable({
-//                             loader: () => import(/* webpackChunkName: "feedback"*/'pages/test/feedback.js'),
-//                             loading: LoadingComponent
-//                         })
-//                     }, {
-//                         name: '申请',
-//                         path: '/apply',
-//                         auth: 'apply',
-//                         children: [
-//                             {
-//                                 name: '清单',
-//                                 path: '/detailed',
-//                                 auth: 'detailed',
-//                                 component: Loadable({
-//                                     loader: () => import(/* webpackChunkName: "detailed"*/'pages/test/detailed.js'),
-//                                     loading: LoadingComponent
-//                                 })
-//                             }, {
-//                                 name: '人员',
-//                                 path: '/staff',
-//                                 auth: 'staff',
-//                                 component: Loadable({
-//                                     loader: () => import(/* webpackChunkName: "staff"*/'pages/test/staff.js'),
-//                                     loading: LoadingComponent
-//                                 })
-//                             }
-//                         ]
-//                     }
-//                 ]
-//             }
-//         ]
-//     }
-// ]
 
 // 遍历带layout的路由
 function routesLoop (arr, base = []) {
