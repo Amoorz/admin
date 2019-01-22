@@ -28,6 +28,6 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-    return { responsive: state.responsiveData };
+    return { responsive: state.responsiveData }
 };
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(Login)

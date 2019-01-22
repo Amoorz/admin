@@ -112,6 +112,7 @@ class LayoutComponent extends Component {
         const { collapsed, isMobile, currentPath,
             // visible
         } = this.state
+        let headerInputWidth = isMobile ? '180px' : '280px'
         return (
             <Layout className="layoutComponent">
                 {!isMobile ?
@@ -145,7 +146,7 @@ class LayoutComponent extends Component {
                             </Col>
                             <Col span={16}>
                                 <Search
-                                    style={{width: '280px', marginTop: '16px'}}
+                                    style={{width: headerInputWidth, marginTop: '16px'}}
                                     placeholder="快速搜索"
                                     onSearch={value => console.log(value)}
                                     enterButton
